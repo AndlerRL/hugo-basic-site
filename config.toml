@@ -1,4 +1,13 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "ananke"
+title = "Hugo Basics"
+canonifyurls = true
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[params]
+  copyrighthtml = "Copyright © 2019 Andler Develops. All Rights Reserved."
+  sidebarrecentlimit = 5
+  author = "AndlerRL"
+  twitteruser = "AndlerRL"
+  css = ["main.css"]
+  js = ["main.js"]

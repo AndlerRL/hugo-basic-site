@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ .Site.Title }} | {{ .Params.title }}</title>
+  {{ range .Site.Params.css }}
+    <link rel="stylesheet" href="/css/{{ relURL ($.Site.BaseURL) }}{{ . }}">
+  {{ end }}
+</head>
+<body id="root">
+  <header class="header__container">
+    <h3 class="header__site-title">
+      {{ .Site.Title }}
+    </h3>
+    <nav class="header__nav-container">
+      <span class='nav-container__nav-item {{ if eq .RelPermalink "/" }}active{{ end }}'>
+        <a href="/">Home</a>
+      </span>
+      <span class='nav-container__nav-item {{ if ne .RelPermalink "/" }}active{{ end }}'>
+        <a href="/posts">Posts</a>
+      </span>
+    </nav>
+  </header>
+  <main class="main-content__container">
+    {{ block "main" . }}
+    {{ end }}
+  </main>
+  <footer class="footer__container">
+    <div class="footer__copyright">
+      {{ .Site.Params.copyrighthtml }}
+    </div>
+    <div class="footer__hugo-logo"></div>
+  </footer>
+  {{ range .Site.Params.js }}
+    <script src="/js/{{ relURL ($.Site.BaseURL) }}{{ . }}"></script>
+  {{ end }}
+</body>
+</html>

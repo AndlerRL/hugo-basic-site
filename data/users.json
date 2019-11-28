@@ -1,0 +1,14 @@
+{
+  "user1": {
+    "name": "Tom Jhones",
+    "username": "Tom123"
+  },
+  "user2": {
+    "name": "Jenny Pot",
+    "username": "Jen888"
+  },
+  "user3": {
+    "name": "John Doe",
+    "username": "JhonnyDoe1"
+  }
+}

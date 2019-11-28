@@ -1,0 +1,13 @@
+{{ $urlPre := "https://jsonplaceholder.typicode.com/posts/" }}
+{{ $postID := .Title }}
+{{ $post := getJSON $urlPre $postID }}
+{{/* QUIERO SACAR EL INDEX 0 DE $post.body PARA HACER MAYOR ESTILO.  */}}
+<div class="post__container">
+  <h2 class="post__title">{{ $post.title }}</h2>
+  {{ if .Date }}
+  <span class="post__date">{{ .Date.Format "January 2, 2006 at 15:04hrs"}}</span>
+  {{ end }}
+  <p class="post__body">
+    {{ $post.body }}
+  </p>
+</div>
