@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://hugo-basics.netlify.com"
 languageCode = "en-us"
 title = "Hugo Basics"
 canonifyurls = true
