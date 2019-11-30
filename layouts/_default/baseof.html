@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{ .Site.Title }} | {{ .Params.title }}</title>
   {{ range .Site.Params.css }}
-    <link rel="stylesheet" href="/css/{{ relURL ($.Site.BaseURL) }}{{ . }}">
+    <link rel="stylesheet" href="{{ $.Site.BaseURL }}/css/{{ . }}">
   {{ end }}
 </head>
 <body id="root">
   <header class="header__container">
-    <h3 class="header__site-title">
+    <h3 class="header__site-title" style="background: url({{$.Site.BaseURL}}/images/hugo.png) -23px no-repeat; background-size: contain; background-origin: border-box;">
       {{ .Site.Title }}
     </h3>
     <nav class="header__nav-container">
@@ -31,10 +31,10 @@
     <div class="footer__copyright">
       {{ .Site.Params.copyrighthtml }}
     </div>
-    <div class="footer__hugo-logo"></div>
+    <div class="footer__hugo-logo" style="background: url({{$.Site.BaseURL}}/images/hugo_full.png) 0px 75px no-repeat; background-size: contain;"></div>
   </footer>
   {{ range .Site.Params.js }}
-    <script src="/js/{{ relURL ($.Site.BaseURL) }}{{ . }}"></script>
+    <script src="{{ $.Site.BaseURL }}/js/{{ . }}"></script>
   {{ end }}
 </body>
 </html>

@@ -1,3 +1,9 @@
 {{ define "main" }}
-  {{ partial "post.html" . }}
+  {{ if eq .RelPermalink "/posts/" }}
+    {{ default "list.html" }}
+  {{ else if eq .RelPermalink "/create-post/" }}
+    {{ .Content }}
+  {{ else }}
+    {{ partial "post.html" . }}
+  {{ end }}
 {{ end }}

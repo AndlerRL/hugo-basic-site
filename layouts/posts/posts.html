@@ -1,0 +1,10 @@
+{{ define "main" }}
+{{ $posts := getJSON "https://jsonplaceholder.typicode.com/posts" }}
+<a class="posts__container">
+  {{ range first 6 $posts}}
+  <div class="posts__item" onclick="getPostItem({{ .id }})">
+    {{ .title }}
+  </div>
+  {{ end }}
+  </div>
+  {{ end }}

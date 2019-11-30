@@ -20,14 +20,14 @@ body {
   color: #f5f5f5;
   padding: 0 0.75rem 0 0;
   height: 3.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
 
   .header__site-title {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 500;
-    background: url(../images/hugo.png) -23px no-repeat;
-    background-size: contain;
-    background-origin: border-box;
     padding: 0 0 0 1.75rem;
     height: 83.333%;
     display: flex;
@@ -85,13 +85,27 @@ body {
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
+  margin-top: 3.5rem;
   
-  .user {
-    width: 300px;
-    height: 100px;
-    padding: 16px;
-    box-shadow: 2px 3px 15px #2223;
-    margin: 2rem auto;
+  .main-content__home-head {
+    width: 100%;
+    height: 33.33vh;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    color: #f5f5f5;
+
+    h1,
+    h2 {
+      font-weight: 300;
+      text-transform: uppercase;
+      width: 91.666%;
+      text-align: center;
+    }
   }
 
   .posts__container {
@@ -107,7 +121,7 @@ body {
     }
 
     .posts__item {
-      width: 30%;
+      width: calc(100% - 16px);
       padding: 32px;
       box-shadow: 2px 3px 15px #2223;
       margin: 1rem 0.5rem;
@@ -125,6 +139,11 @@ body {
       &:hover {
         transform: scale(1.025);
       }
+
+      @media screen and (min-width: 600px) {
+        width: 30%;
+        float: left;
+      }
     }
   }
   
@@ -134,6 +153,7 @@ body {
     margin: 3.5rem auto;
     box-shadow: 2px 3px 15px #2223;
     padding: 32px;
+    margin-top: 7rem;
 
     .post__title {
       text-transform: uppercase;
@@ -156,6 +176,37 @@ body {
 
     .post__body {
       margin-top: 3.5rem;
+      line-height: 1.75;
+      font-weight: 300;
+      
+      &::first-letter {
+        font-size: 32px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #8778e9;
+      }
+    }
+
+    .post__back {
+      margin-top: 3.5rem;
+      font-weight: 300;
+      
+      &::first-letter {
+        font-size: 20px;
+        font-weight: 800;
+        margin-right: 8px;
+      }
+
+      a {
+        text-decoration: none;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 50ms;
+
+        &:hover {
+          font-weight: 500;
+          letter-spacing: 1px;
+        }
+      }
     }
   }
 }
@@ -180,8 +231,6 @@ body {
   }
   
   .footer__hugo-logo {
-    background: url(../images/hugo_full.png) 0px 75px no-repeat;
-    background-size: contain;
     height: 151px;
     width: 100%;
     max-width: 565px;
