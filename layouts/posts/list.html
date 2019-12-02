@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{ $posts := getJSON "https://jsonplaceholder.typicode.com/posts" }}
+{{ range .Paginator.Pages }}
+  {{ if .Date }}
+    {{ $date := .Date.Format "January 2, 2006 at 15:04hrs" }}
+  {{ end }}
+{{ end }}
+  <div class="posts__container">
+    {{ range first 7 $posts}}
+    <div class="posts__item" onclick="getPostItem({{ .id }})">
+        <h4 class="post-item__title">
+          <span>title<br></span>
+          {{ .title }}
+        </h4>
+      </div>
+      {{ end }}
+    {{ template "_internal/pagination.html"}}
+  </div>
+{{ end }}

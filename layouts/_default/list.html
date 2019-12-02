@@ -2,10 +2,7 @@
   {{ $posts := getJSON "https://jsonplaceholder.typicode.com/posts" }}
   <div class="posts__container">
     {{ range first 7 $posts}}
-    <div class="posts__item" onclick="getPostItem({{ .id }})">
-      {{ .title }}
-    </div>
+     {{ partial "summary.html" . }}
     {{ end }}
-    {{ .Params.testParam }}
   </div>
 {{ end }}

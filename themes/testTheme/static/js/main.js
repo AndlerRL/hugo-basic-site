@@ -1,1 +1,0 @@
-console.log('This file has been read well. Yup...')

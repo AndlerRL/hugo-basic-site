@@ -1,0 +1,60 @@
+.Zoom-in {
+  animation: zoom-in 1.25s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+.Fade-Left-In {
+  animation: fade-left-in 1.25s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+.Fade-Right-In {
+  animation: fade-right-in 1.25s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+
+.Delay {
+  opacity: 0;
+  animation-delay: 1000ms;
+}
+
+.Long-Delay {
+  opacity: 0;
+  animation-delay: 2000ms;
+}
+
+.X-Long-Delay {
+  opacity: 0;
+  animation-delay: 3000ms;
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.15);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-left-in {
+  from {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes fade-right-in {
+  from {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0vw);
+  }
+}

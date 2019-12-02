@@ -1,0 +1,12 @@
+<div class="posts__item" onclick="getPostItem({{ .id }})">
+  <span>{{ humanize .Section }}</span>
+  <h4 class="post-item__title">
+    <span>title<br></span>
+    {{ .title }}
+  </h4>
+  {{ if .Date }}
+    <div class="f6">
+      {{ .Date.Format "January 2, 2006 at 15:04hrs" }}
+    </div>
+  {{ end }}
+</div>

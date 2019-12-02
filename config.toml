@@ -9,5 +9,5 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
   sidebarrecentlimit = 5
   author = "AndlerRL"
   twitteruser = "AndlerRL"
-  css = ["main.css"]
+  css = ["main.css", "animations.css"]
   js = ["main.js"]
